@@ -3,10 +3,7 @@ title: "Eksempel 2"
 author: "Ola Matre"
 summary: "Veldig viktig og oppsummerende."
 image:
-  {
-    url: "https://cdn.britannica.com/16/254816-050-41C9577A/Google-logo-Googleplex-headquarters-Mountain-View-California.jpg",
-    alt: "Bilde fra Google",
-  }
+  { url: "/src/assets/atle-mcgrath.png", alt: "Atle McGrath på Olympiatoppen" }
 layout: "../../layouts/PostLayout.astro"
 ---
 
