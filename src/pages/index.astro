@@ -9,6 +9,7 @@ interface Frontmatter {
     url: string;
     alt: string;
   };
+  elementsPerRow?: number;
 }
 const posts = await Astro.glob<Frontmatter>("../pages/posts/*.md");
 ---
@@ -24,6 +25,7 @@ const posts = await Astro.glob<Frontmatter>("../pages/posts/*.md");
           author={post.frontmatter.author}
           url={post.url}
           image={post.frontmatter.image}
+          elementsPerRow={post.frontmatter.elementsPerRow}
         />
       ))
     }
@@ -37,5 +39,6 @@ const posts = await Astro.glob<Frontmatter>("../pages/posts/*.md");
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
+    justify-content: center;
   }
 </style>

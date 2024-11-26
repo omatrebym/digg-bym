@@ -1,5 +1,5 @@
 ---
-title: "Eksempel 2"
+title: "Eksempel med lang tittel"
 author: "Ola Matre"
 summary: "Veldig viktig og oppsummerende."
 image:
