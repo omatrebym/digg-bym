@@ -26,13 +26,14 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 <style>
   .newsfeed-post-heading {
     margin: 0;
-    font-size: 2rem;
+    font-size: max(1.5rem, 2vw);
     word-wrap: break-word;
   }
   .newsfeed-post-link {
     color: inherit;
     display: inline-block;
     width: 300px;
+    height: 300px;
   }
   .newsfeed-post-link:hover {
     text-decoration: none;
