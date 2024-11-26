@@ -13,35 +13,28 @@ interface Props {
   };
 }
 
-const { title, summary, url, image } = Astro.props;
+const { title, url, image } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/*.{jpeg,jpg,png,gif}"
 );
 ---
 
-<article>
-  <a href={url}>
-    <Image src={images[image.url]()} alt={image.alt} height="200" />
-    <h2>{title}</h2>
-    <p>{summary}</p>
-  </a>
-</article>
+<a class="newsfeed-post-link" href={url}>
+  <Image src={images[image.url]()} alt={image.alt} width="300" />
+  <h2 class="newsfeed-post-heading">{title}</h2>
+</a>
 <style>
-  h2 {
+  .newsfeed-post-heading {
     margin: 0;
     font-size: 2rem;
+    word-wrap: break-word;
   }
-  p {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-  }
-  a {
-    text-decoration: none;
+  .newsfeed-post-link {
     color: inherit;
     display: inline-block;
-    width: fit-content;
+    width: 300px;
   }
-  article {
-    width: fit-content;
+  .newsfeed-post-link:hover {
+    text-decoration: none;
   }
 </style>

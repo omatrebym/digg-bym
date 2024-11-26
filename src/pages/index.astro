@@ -14,7 +14,8 @@ const posts = await Astro.glob<Frontmatter>("../pages/posts/*.md");
 ---
 
 <Layout title="Digitaliseringsgevinst'n">
-  <div>
+  <div class="newsfeed-wrapper">
+    <h1 class="sr-only">Digitaliseringsgevinsten - nyheter</h1>
     {
       posts.map((post) => (
         <Post
@@ -30,9 +31,10 @@ const posts = await Astro.glob<Frontmatter>("../pages/posts/*.md");
 </Layout>
 
 <style>
-  div {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  .newsfeed-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
   }
