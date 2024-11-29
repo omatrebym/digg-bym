@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 interface Frontmatter {
   title: string;
   author: string;
+  publishedAt: string;
   summary: string;
   image: {
     url: string;
@@ -18,16 +19,22 @@ const posts = await Astro.glob<Frontmatter>("../pages/posts/*.md");
   <div class="newsfeed-wrapper">
     <h1 class="sr-only">Digitaliseringsgevinsten - nyheter</h1>
     {
-      posts.map((post) => (
-        <Post
-          title={post.frontmatter.title}
-          summary={post.frontmatter.summary}
-          author={post.frontmatter.author}
-          url={post.url}
-          image={post.frontmatter.image}
-          elementsPerRow={post.frontmatter.elementsPerRow}
-        />
-      ))
+      posts
+        .sort(
+          (a, b) =>
+            new Date(a.frontmatter.publishedAt).getTime() -
+            new Date(b.frontmatter.publishedAt).getTime()
+        )
+        .map((post) => (
+          <Post
+            title={post.frontmatter.title}
+            summary={post.frontmatter.summary}
+            author={post.frontmatter.author}
+            url={post.url}
+            image={post.frontmatter.image}
+            elementsPerRow={post.frontmatter.elementsPerRow}
+          />
+        ))
     }
   </div>
 </Layout>
