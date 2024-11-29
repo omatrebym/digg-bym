@@ -22,8 +22,8 @@ const posts = await Astro.glob<Frontmatter>("../pages/posts/*.md");
       posts
         .sort(
           (a, b) =>
-            new Date(a.frontmatter.publishedAt).getTime() -
-            new Date(b.frontmatter.publishedAt).getTime()
+            new Date(b.frontmatter.publishedAt).getTime() -
+            new Date(a.frontmatter.publishedAt).getTime()
         )
         .map((post) => (
           <Post
