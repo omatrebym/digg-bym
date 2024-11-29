@@ -1,4 +1,5 @@
 ---
+type: 2
 title: "Hit drar Frankrike-ekspertene på vinferie"
 author: "Espen Widding"
 publishedAt: "2024-11-29T15:00:00"
