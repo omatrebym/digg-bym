@@ -9,11 +9,6 @@ image: { url: "/src/assets/ramon-zenhausern.png", alt: "Ramon luktesalt" }
 layout: "../../layouts/ArtikkelLayout.astro"
 ---
 
-<!-- <figure style="float:right;">
-  <img src="/src/assets/atle-mcgrath.png" alt="Atle Lie McGrath på Olympiatoppen">
-  <figcaption style="color:#666;width:300px">KUNNE IKKJE BRUKT: For McGrath blir luktesalt litt for mykje av det gode for han sjølv. Foto: Anders Boine Verstad / NRK</figcaption>
-</figure> -->
-
 Under slalåmrennet i austerrikske Gurgl, kom TV-sjåarane tett på sveitsaren mens han dreiv med ei noko overraskande førebuing.
 
 Bileta viste at alpinisten fekk noko som likna på ein limstift eller leppepomade i det eine naseboret, og «sniffa» inn ein gong i kvart nasebor.
