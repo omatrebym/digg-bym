@@ -49,6 +49,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     @media (max-width: 1200px) {
       width: calc(97% / max(var(--elements-per-row) - 1, 1));
     }
+    @media (max-width: 800px) {
+      width: 97%;
+    }
   }
   .newsfeed-post-link:hover {
     text-decoration: none;
