@@ -2,7 +2,7 @@
 type: 2
 title: "Matopplevelser i Bymiljøetaten - Calissons d'Aix"
 author: "Marie Holter"
-publishedAt: "2024-11-29T21:00:00"
+publishedAt: "2024-11-29T21:00:00+01:00"
 summary: ""
 image:
   { url: "/src/assets/calisson-daix.png", alt: "Matretten Calissons d'Aix" }

@@ -2,7 +2,7 @@
 type: 2
 title: "Hit drar Frankrike-ekspertene på vinferie"
 author: "Espen Widding"
-publishedAt: "2024-11-29T15:00:00"
+publishedAt: "2024-11-29T15:00:00+01:00"
 summary: "Søker du den autentiske franske opplevelsen må du dra til Aix-en-Provence."
 image:
   {

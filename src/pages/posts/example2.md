@@ -3,7 +3,7 @@ type: 1
 draft: true
 title: "Eksempel 2"
 author: "Ola Matre"
-publishedAt: "2024-11-29T13:00:00"
+publishedAt: "2024-11-29T13:00:00+01:00"
 summary: "Veldig viktig og oppsummerende."
 image:
   { url: "/src/assets/atle-mcgrath.png", alt: "Atle McGrath på Olympiatoppen" }
