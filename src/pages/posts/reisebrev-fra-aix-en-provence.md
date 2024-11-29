@@ -13,10 +13,10 @@ layout: "../../layouts/ReisebrevLayout.astro"
 elementsPerRow: 2
 ---
 
-<figure style="width:100%;">
+<!-- <figure style="width:100%;">
   <img src="/src/assets/aix-en-provence.png" alt="Aix-en-Provence i Frankrike utsikt over gamlebyen">
   <figcaption style="color:#666;width:100%;">VAKKER BY: Aix-en-Provence er absolutt noe å hvile øya på. Foto: Tripadvisor</figcaption>
-</figure>
+</figure> -->
 
 # Reisebrev fra Aix-en-Provence
 

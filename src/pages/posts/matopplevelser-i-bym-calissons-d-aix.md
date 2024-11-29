@@ -10,10 +10,10 @@ layout: "../../layouts/MatspaltenLayout.astro"
 elementsPerRow: 2
 ---
 
-<figure style="width:100%;">
+<!-- <figure style="width:100%;">
   <img src="/src/assets/calisson-daix.png" alt="Matretten calissons d'Aix">
   <figcaption style="color:#666;width:100%;">DIGG MAT?: Er callisons d'Aix for fjongt for Karvesvingen 3? Foto: Ukjent</figcaption>
-</figure>
+</figure> -->
 
 **Det var en helt vanlig onsdag i Karvesvingen 3, bortsett fra at Espen W. var tilbake fra ferie og hadde med seg litt godis fra turen til sine kolleger i Digital utvikling – dette, ifølge mine kilder, til blandede reaksjoner.**
 
