@@ -1,6 +1,7 @@
 ---
 title: "Oppsiktsvekkande bilde før start: – Ein av dei mest ekstreme"
 author: "Ola Matre"
+publishedAt:
 summary: "Ikkje berre ruvar han 202 centimeter over bakken, Ramon Zenhäusern har også ein heilt eigen måte å førebu seg på før start."
 image: { url: "/src/assets/ramon-zenhausern.png", alt: "Ramon luktesalt" }
 layout: "../../layouts/PostLayout.astro"
