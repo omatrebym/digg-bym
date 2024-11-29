@@ -1,4 +1,4 @@
-<button data-confetti-button class="confetti-button"> Spre glede 🎉 </button>
+<button data-confetti-button class="confetti-button">Spre glede</button>
 
 <script>
   import confetti from "canvas-confetti";
@@ -16,10 +16,17 @@
     background-color: #f9a8d4;
     border: none;
     color: green;
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
-    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.2rem;
     cursor: pointer;
+    @media ((max-width: 800px)) {
+      content: none;
+    }
+  }
+  .confetti-button::after {
+    content: "🎉";
+    margin-left: 0.5rem;
   }
   .confetti-button:hover {
     background-color: #f48fb1;
