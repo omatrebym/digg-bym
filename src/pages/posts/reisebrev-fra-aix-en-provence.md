@@ -10,6 +10,7 @@ image:
     alt: "Aix-en-Provence i Frankrike utsikt over gamlebyen",
   }
 layout: "../../layouts/ReisebrevLayout.astro"
+elementsPerRow: 2
 ---
 
 <figure style="width:100%;">

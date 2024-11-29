@@ -19,7 +19,13 @@ const posts = await Astro.glob<Frontmatter>("../pages/posts/*.md");
     <h1 class="sr-only">Digitaliseringsgevinsten - nyheter</h1>
     {
       posts
-        .filter((post) => post.frontmatter.draft !== true)
+        .filter(
+          (post) =>
+            (post.frontmatter.draft !== true &&
+              new Date(post.frontmatter.publishedAt).getTime() <
+                new Date().getTime()) ||
+            import.meta.env.DEV
+        )
         .sort(
           (a, b) =>
             new Date(b.frontmatter.publishedAt).getTime() -
