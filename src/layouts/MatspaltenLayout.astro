@@ -2,12 +2,14 @@
 import Layout from "./Layout.astro";
 
 const {
-  frontmatter: { title },
+  frontmatter: { title, author },
 } = Astro.props;
 ---
 
 <Layout>
   <article>
+    <h1>{title}</h1>
+    <h2>{`Av ${author}`}</h2>
     <slot />
   </article>
 </Layout>
