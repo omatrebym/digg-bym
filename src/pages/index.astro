@@ -12,6 +12,7 @@ import MatspaltenNewsfeed from "../components/MatspaltenNewsfeed.astro";
 import ReisebrevNewsfeed from "../components/ReisebrevNewsfeed.astro";
 
 const posts = await Astro.glob<Frontmatter>("../pages/posts/*.mdx");
+const getUrl = (url?: string) => (url ? url + "/index.html" : undefined);
 ---
 
 <Layout title="Digitaliseringsgevinst'n">
@@ -39,7 +40,7 @@ const posts = await Astro.glob<Frontmatter>("../pages/posts/*.mdx");
                 title={(post.frontmatter as ArtikkelFrontmatter).title}
                 summary={(post.frontmatter as ArtikkelFrontmatter).summary}
                 author={(post.frontmatter as ArtikkelFrontmatter).author}
-                url={post.url}
+                url={getUrl(post.url)}
                 image={(post.frontmatter as ArtikkelFrontmatter).image}
                 elementsPerRow={
                   (post.frontmatter as ArtikkelFrontmatter).elementsPerRow
@@ -52,7 +53,7 @@ const posts = await Astro.glob<Frontmatter>("../pages/posts/*.mdx");
                 title={(post.frontmatter as MatspaltenFrontmatter).title}
                 summary={(post.frontmatter as MatspaltenFrontmatter).summary}
                 author={(post.frontmatter as MatspaltenFrontmatter).author}
-                url={post.url}
+                url={getUrl(post.url)}
                 image={(post.frontmatter as MatspaltenFrontmatter).image}
                 elementsPerRow={
                   (post.frontmatter as MatspaltenFrontmatter).elementsPerRow
@@ -65,7 +66,7 @@ const posts = await Astro.glob<Frontmatter>("../pages/posts/*.mdx");
                 title={(post.frontmatter as ReisebrevFrontmatter).title}
                 summary={(post.frontmatter as ReisebrevFrontmatter).summary}
                 author={(post.frontmatter as ReisebrevFrontmatter).author}
-                url={post.url}
+                url={getUrl(post.url)}
                 image={(post.frontmatter as ReisebrevFrontmatter).image}
                 elementsPerRow={
                   (post.frontmatter as ReisebrevFrontmatter).elementsPerRow
