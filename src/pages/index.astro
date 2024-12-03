@@ -11,7 +11,7 @@ import ArtikkelNewsfeed from "../components/ArtikkelNewsfeed.astro";
 import MatspaltenNewsfeed from "../components/MatspaltenNewsfeed.astro";
 import ReisebrevNewsfeed from "../components/ReisebrevNewsfeed.astro";
 
-const posts = await Astro.glob<Frontmatter>("../pages/posts/*.md");
+const posts = await Astro.glob<Frontmatter>("../pages/posts/*.mdx");
 ---
 
 <Layout title="Digitaliseringsgevinst'n">
