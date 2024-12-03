@@ -5,11 +5,11 @@ import {
   type Frontmatter,
   type MatspaltenFrontmatter,
   type ReisebrevFrontmatter,
-} from "../interfaces/frontmatter";
-import Layout from "../layouts/Layout.astro";
-import ArtikkelNewsfeed from "../components/ArtikkelNewsfeed.astro";
-import MatspaltenNewsfeed from "../components/MatspaltenNewsfeed.astro";
-import ReisebrevNewsfeed from "../components/ReisebrevNewsfeed.astro";
+} from "@interfaces/frontmatter";
+import Layout from "@layouts/Layout.astro";
+import ArtikkelNewsfeed from "@components/ArtikkelNewsfeed.astro";
+import MatspaltenNewsfeed from "@components/MatspaltenNewsfeed.astro";
+import ReisebrevNewsfeed from "@components/ReisebrevNewsfeed.astro";
 
 const posts = await Astro.glob<Frontmatter>("../pages/posts/*.mdx");
 const getUrl = (url?: string) => (url ? url + "/index.html" : undefined);
