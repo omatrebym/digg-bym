@@ -9,9 +9,10 @@ image:
 layout: "../../layouts/MatspaltenLayout.astro"
 elementsPerRow: 2
 ---
+import CalissonDaix from "@assets/calisson-daix.png";
 
 <figure style={{width: "100%" }}>
-  <img src="/src/assets/calisson-daix.png" alt="Matretten calissons d'Aix" />
+  <img src={CalissonDaix.src} alt="Matretten calissons d'Aix" />
   <figcaption style={{ color: "#666", width: "100%" }}>DIGG MAT?: Er callisons d'Aix for fjongt for Karvesvingen 3? Foto: Ukjent</figcaption>
 </figure>
 

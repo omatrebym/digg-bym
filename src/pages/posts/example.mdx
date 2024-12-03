@@ -8,9 +8,10 @@ summary: "Ikkje berre ruvar han 202 centimeter over bakken, Ramon Zenhäusern ha
 image: { url: "/src/assets/ramon-zenhausern.png", alt: "Ramon luktesalt" }
 layout: "../../layouts/ArtikkelLayout.astro"
 ---
+import AtleMcGrath from "@assets/atle-mcgrath.png"
 
 <figure style={{ float: "right" }}>
-  <img src="/src/assets/atle-mcgrath.png" alt="Atle Lie McGrath på Olympiatoppen" />
+  <img src={AtleMcGrath.src} alt="Atle Lie McGrath på Olympiatoppen" />
   <figcaption style={{ color: "#666", width: "300px" }}>KUNNE IKKJE BRUKT: For McGrath blir luktesalt litt for mykje av det gode for han sjølv. Foto: Anders Boine Verstad / NRK</figcaption>
 </figure>
 
