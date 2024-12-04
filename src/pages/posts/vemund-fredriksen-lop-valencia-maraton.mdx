@@ -8,11 +8,13 @@ image: { url: "/src/assets/vemund-fredriksen.png", alt: "Vemund Fredriksen under
 layout: "../../layouts/ArtikkelLayout.astro"
 ---
 import VemundFredriksen from "@assets/vemund-fredriksen.png"
+import ArticleImage from "@components/ArticleImage.astro"
 
-<figure style={{ width: "100%" }}>
-  <img src={VemundFredriksen.src} alt="Vemund Fredriksen underveis i hand maraton i Valencia Maraton" />
-  <figcaption style={{ color: "#666", width: "100%" }}>VED GODT MOT: Vemund Fredriksen mener selv det kunne gått fortere. Foto: Vemund Fredriksen</figcaption>
-</figure>
+<ArticleImage src={VemundFredriksen.src} alt="Vemund Fredriksen underveis i hand maraton i Valencia Maraton" caption={{
+  heading: "VED GODT MOT",
+  text: "Vemund Fredriksen mener selv det kunne gått fortere.",
+  photographer: "Vemund Fredriksen"
+}} />
 
 Vemund Fredriksen fullførte Valencia Maraton 1. desember 2024 med en imponerende tid på 3:30:58. Til tross for den sterke tiden, innrømmer Fredriksen at han åpnet løpet for hardt, noe som førte til at han måtte veksle mellom gåing og jogging de siste 12 kilometerne.
 

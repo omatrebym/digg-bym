@@ -1,0 +1,30 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  caption: {
+    heading: string;
+    text: string;
+    photographer: string;
+  };
+  width?: string;
+  captionWidth?: string;
+}
+
+const {
+  src,
+  alt,
+  caption,
+  width = "100%",
+  captionWidth = "100%",
+} = Astro.props;
+---
+
+<figure style={{ width: width }}>
+  <img src={src} alt={alt} />
+  <figcaption style={{ color: "#666", width: captionWidth }}>
+    {
+      `${caption.heading.toUpperCase()}: ${caption.text} Foto: ${caption.photographer}`
+    }
+  </figcaption>
+</figure>
