@@ -1,5 +1,6 @@
 ---
 import SpreGledeKnapp from "@components/SpreGledeKnapp.astro";
+import { Image } from "astro:assets";
 ---
 
 <!doctype html>
@@ -19,11 +20,31 @@ import SpreGledeKnapp from "@components/SpreGledeKnapp.astro";
       <SpreGledeKnapp />
     </header>
     <main>
+      <Image
+        class="bil-i-oslo-reklame"
+        src="/src/assets/bil-i-oslo-reklame.gif"
+        alt="Reklame for Bil i Oslo"
+        width="150"
+        height="600"
+      />
       <slot />
+      <Image
+        class="bil-i-oslo-reklame"
+        src="/src/assets/bil-i-oslo-reklame.gif"
+        alt="Reklame for Bil i Oslo"
+        width="150"
+        height="600"
+      />
     </main>
   </body>
 </html>
 <style is:global>
+  .bil-i-oslo-reklame {
+    position: sticky;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+  }
   .header {
     display: flex;
     justify-content: space-between;
@@ -68,6 +89,8 @@ import SpreGledeKnapp from "@components/SpreGledeKnapp.astro";
   }
   main {
     display: flex;
+    flex-direction: row;
+    gap: 1rem;
     margin: 0 auto;
     max-width: 1200px;
     @media (max-width: 1600px) {
