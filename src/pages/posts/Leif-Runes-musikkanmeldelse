@@ -1,0 +1,51 @@
+---
+type: 2
+title: "Plateanmeldelse Juba Juba (1983)"
+author: "Ulle, Leif Rune"
+publishedAt: "2024-12-04T16:35:00+01:00"
+summary: ""Juba Juba" av Knutsen & Ludvigsen, er ofte omtalt som en av tidenes beste norske plater."
+image:
+  { url: "/src/assets/jubajubabilde.png", alt: "Albumcoveret til albumet Juba Juba fra 1983. Rød bakgrunn med to glade fyrer med store tenner." }
+layout: "../../layouts/MatspaltenLayout.astro"
+elementsPerRow: 2
+---
+import jubajubabilde from "@assets/jubajubabilde.png"
+
+
+<figure style={{width: "100%" }}>
+  <img src={jubajubabilde.src} alt="Albumcoveret til albumet Juba Juba fra 1983. Rød bakgrunn med to glade fyrer med store tenner" />
+  <figcaption style={{ color: "#666", width: "100%" }}>VIKTIG NASJONALSKATT?:Leif Rune mener Juba Juba er en koselig juleplate å høre på med familien? Foto: Ukjent</figcaption>
+</figure>
+
+}} />
+**"Juba Juba" av Knutsen & Ludvigsen, er ofte omtalt som en av tidenes beste norske plater. Her er noen grunner til hvorfor dette albumet har en spesiell plass i hjertene til mange nordmenn.**
+
+## Tidløse sanger
+Albumet inneholder en rekke sanger som har blitt klassikere, som "Dum og deilig", "God morgen Norge", og "Kanskje kommer kongen". Disse sangene har en unik evne til å appellere til både barn og voksne, noe som gjør dem tidløse. I tillegg serverer Knutsen & Ludvigsen underfundige tekster som får lytteren til å drømme seg bort og tenke over sin egen tilværelse,  se utdrag fra "Liten aftensang"
+
+*
+Der borte ved bredden av natten
+Der morgengry ledsager dagen inn
+Se stjernene blekner og forsvinner
+Langt ut et sted
+Langt ut et sted
+*
+
+## Kreativitet og humor
+Knutsen & Ludvigsen er kjent for sin kreative bruk av språk og humor. Tekstene deres er fulle av lekne ordspill og morsomme historier som fanger fantasien til lytterne. Dette gjør "Juba Juba" til en glede å lytte til, uansett alder.
+
+## Musikalsk kvalitet 
+Musikalsk sett er albumet variert og godt produsert. Knutsen & Ludvigsen kombinerer elementer fra ulike sjangre, inkludert pop, rock og visesang, noe som gir albumet en rik og dynamisk lyd.
+
+##Kulturell betydning
+"Juba Juba" har hatt en stor innflytelse på norsk kultur. Sangene fra albumet har blitt brukt i skoler, barnehager og på TV, og de har blitt en del av den norske folkesjelen. Albumet har også inspirert mange norske musikere og artister.
+
+ - Nostalgi: For mange nordmenn bringer "Juba Juba" tilbake minner fra barndommen. Albumet har en nostalgisk verdi som gjør at det fortsetter å være populært, selv flere tiår etter utgivelsen
+
+##Anerkjennelse
+
+Albumet har fått mye ros og anerkjennelse gjennom årene. Det har blitt kåret til en av de beste norske platene av flere musikkritikere og publikasjoner.
+
+"Juba Juba" er mer enn bare et musikkalbum; det er en del av Norges kulturelle arv. Det er et album som har gledet generasjoner og som fortsetter å være en viktig del av norsk musikkhistorie.
+
+*Artikkelen er skrevet av kunstig intelligens, men den er faktasjekket av et menneske. Forfatteren selv står inne for innholdet.* 
