@@ -1,6 +1,7 @@
 ---
 import SpreGledeKnapp from "@components/SpreGledeKnapp.astro";
 import { Image } from "astro:assets";
+import Logo from "@assets/logo.svg?raw";
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/*.{jpeg,jpg,png,gif}"
@@ -19,8 +20,13 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   </head>
   <body>
     <header class="header">
-      <a class="logo visible-non-phone" href="/">Digitaliseringsgevinst'n</a>
-      <a class="logo visible-phone-only" href="/">Digg!</a>
+      <a class="logo-and-app-name-wrapper" href="/">
+        <div class="logo">
+          <Fragment set:html={Logo} />
+        </div>
+        <span class="app-name visible-non-phone">Digitaliseringsgevinst'n</span>
+        <span class="app-name visible-phone-only">Digg!</span>
+      </a>
       <SpreGledeKnapp />
     </header>
     <main>
@@ -57,11 +63,22 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  .logo {
-    font-size: calc(1rem + 5vw);
-    font-stretch: expanded;
+  .logo-and-app-name-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
     text-decoration: none;
     color: black;
+  }
+  .app-name {
+    font-size: calc(1rem + 2vw);
+    font-stretch: expanded;
+  }
+  .logo {
+    display: flex;
+    width: calc(1rem + 2vw);
+    height: calc(1rem + 2vw);
   }
   .visible-non-phone {
     @media (max-width: 800px) {
