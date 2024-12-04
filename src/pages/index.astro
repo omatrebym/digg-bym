@@ -10,9 +10,21 @@ import Layout from "@layouts/Layout.astro";
 import ArtikkelNewsfeed from "@components/newsfeed/ArtikkelNewsfeed.astro";
 import MatspaltenNewsfeed from "@components/newsfeed/MatspaltenNewsfeed.astro";
 import ReisebrevNewsfeed from "@components/newsfeed/ReisebrevNewsfeed.astro";
+import type { MDXInstance } from "astro";
 
 const posts = await Astro.glob<Frontmatter>("../pages/posts/*.mdx");
 const getUrl = (url?: string) => (url ? url + "/index.html" : undefined);
+const filterArticles = (post: MDXInstance<Frontmatter>) => {
+  const hasBeenPublished =
+    new Date(post.frontmatter.publishedAt).getTime() < new Date().getTime();
+  const isInDevelopment = import.meta.env.DEV;
+
+  if (isInDevelopment) return true;
+  if (post.frontmatter.draft === true) return false;
+  if (!hasBeenPublished) return false;
+
+  return true;
+};
 ---
 
 <Layout title="Digitaliseringsgevinst'n">
@@ -20,13 +32,7 @@ const getUrl = (url?: string) => (url ? url + "/index.html" : undefined);
     <h1 class="sr-only">Digitaliseringsgevinsten - nyheter</h1>
     {
       posts
-        .filter(
-          (post) =>
-            (post.frontmatter.draft !== true &&
-              new Date(post.frontmatter.publishedAt).getTime() <
-                new Date().getTime()) ||
-            import.meta.env.DEV
-        )
+        .filter(filterArticles)
         .sort(
           (a, b) =>
             new Date(b.frontmatter.publishedAt).getTime() -
