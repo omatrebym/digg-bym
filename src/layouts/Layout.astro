@@ -30,7 +30,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       <SpreGledeKnapp />
     </header>
     <main>
-      <div>
+      <div class="visible-non-phone">
         <div class="reklame">
           <Image
             src={images["/src/assets/bil-i-oslo-reklame.gif"]()}
@@ -47,7 +47,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         </div>
       </div>
       <slot />
-      <div>
+      <div class="visible-non-phone">
         <div class="reklame">
           <Image
             src={images["/src/assets/bil-i-oslo-reklame.gif"]()}
