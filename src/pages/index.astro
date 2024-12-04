@@ -3,6 +3,7 @@ import {
   PostType,
   type ArtikkelFrontmatter,
   type Frontmatter,
+  type LederFrontmatter,
   type MatspaltenFrontmatter,
   type ReisebrevFrontmatter,
 } from "@interfaces/frontmatter";
@@ -11,6 +12,7 @@ import ArtikkelNewsfeed from "@components/newsfeed/ArtikkelNewsfeed.astro";
 import MatspaltenNewsfeed from "@components/newsfeed/MatspaltenNewsfeed.astro";
 import ReisebrevNewsfeed from "@components/newsfeed/ReisebrevNewsfeed.astro";
 import type { MDXInstance } from "astro";
+import LederNewsfeed from "@components/newsfeed/LederNewsfeed.astro";
 
 const posts = await Astro.glob<Frontmatter>("../pages/posts/*.mdx");
 const getUrl = (url?: string) => (url ? url + "/index.html" : undefined);
@@ -76,6 +78,19 @@ const filterArticles = (post: MDXInstance<Frontmatter>) => {
                 image={(post.frontmatter as ReisebrevFrontmatter).image}
                 elementsPerRow={
                   (post.frontmatter as ReisebrevFrontmatter).elementsPerRow
+                }
+              />
+            )}
+            {post.frontmatter.type === PostType.Leder && (
+              <LederNewsfeed
+                draft={(post.frontmatter as LederFrontmatter).draft}
+                title={(post.frontmatter as LederFrontmatter).title}
+                summary={(post.frontmatter as LederFrontmatter).summary}
+                author={(post.frontmatter as LederFrontmatter).author}
+                url={getUrl(post.url)}
+                image={(post.frontmatter as LederFrontmatter).image}
+                elementsPerRow={
+                  (post.frontmatter as LederFrontmatter).elementsPerRow
                 }
               />
             )}
