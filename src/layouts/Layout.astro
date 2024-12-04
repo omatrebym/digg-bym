@@ -30,26 +30,44 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       <SpreGledeKnapp />
     </header>
     <main>
-      <Image
-        class="bil-i-oslo-reklame"
-        src={images["/src/assets/bil-i-oslo-reklame.gif"]()}
-        alt="Reklame for Bil i Oslo"
-        width="150"
-        height="600"
-      />
+      <div>
+        <div class="reklame">
+          <Image
+            src={images["/src/assets/bil-i-oslo-reklame.gif"]()}
+            alt="Reklame for Bil i Oslo"
+            width="150"
+            height="600"
+          />
+          <Image
+            src={images["/src/assets/aws-nikolai.gif"]()}
+            alt="Reklame for Bil i Oslo"
+            width="150"
+            height="150"
+          />
+        </div>
+      </div>
       <slot />
-      <Image
-        class="bil-i-oslo-reklame"
-        src={images["/src/assets/bil-i-oslo-reklame.gif"]()}
-        alt="Reklame for Bil i Oslo"
-        width="150"
-        height="600"
-      />
+      <div>
+        <div class="reklame">
+          <Image
+            src={images["/src/assets/bil-i-oslo-reklame.gif"]()}
+            alt="Reklame for Bil i Oslo"
+            width="150"
+            height="600"
+          />
+          <Image
+            src={images["/src/assets/aws-nikolai.gif"]()}
+            alt="Reklame for Bil i Oslo"
+            width="150"
+            height="150"
+          />
+        </div>
+      </div>
     </main>
   </body>
 </html>
 <style is:global>
-  .bil-i-oslo-reklame {
+  .reklame {
     position: sticky;
     right: 0;
     top: 0;
