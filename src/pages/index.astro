@@ -7,9 +7,9 @@ import {
   type ReisebrevFrontmatter,
 } from "@interfaces/frontmatter";
 import Layout from "@layouts/Layout.astro";
-import ArtikkelNewsfeed from "@components/ArtikkelNewsfeed.astro";
-import MatspaltenNewsfeed from "@components/MatspaltenNewsfeed.astro";
-import ReisebrevNewsfeed from "@components/ReisebrevNewsfeed.astro";
+import ArtikkelNewsfeed from "@components/newsfeed/ArtikkelNewsfeed.astro";
+import MatspaltenNewsfeed from "@components/newsfeed/MatspaltenNewsfeed.astro";
+import ReisebrevNewsfeed from "@components/newsfeed/ReisebrevNewsfeed.astro";
 
 const posts = await Astro.glob<Frontmatter>("../pages/posts/*.mdx");
 const getUrl = (url?: string) => (url ? url + "/index.html" : undefined);
