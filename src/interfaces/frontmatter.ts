@@ -15,6 +15,7 @@ export interface Frontmatter {
   image: {
     url: string;
     alt: string;
+    height?: string;
   };
   elementsPerRow?: number;
 }

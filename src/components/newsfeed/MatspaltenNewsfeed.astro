@@ -11,6 +11,7 @@ interface Props {
   image: {
     url: string;
     alt: string;
+    height?: string;
   };
   elementsPerRow?: number;
 }
@@ -29,6 +30,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   <div class="newsfeed-post-draft-image-wrapper">
     <Picture
       class="newsfeed-post-image"
+      style={image.height ? { height: image.height } : null}
       src={images[image.url]()}
       alt={image.alt}
     />
