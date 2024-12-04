@@ -1,6 +1,10 @@
 ---
 import SpreGledeKnapp from "@components/SpreGledeKnapp.astro";
 import { Image } from "astro:assets";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif}"
+);
 ---
 
 <!doctype html>
@@ -22,7 +26,7 @@ import { Image } from "astro:assets";
     <main>
       <Image
         class="bil-i-oslo-reklame"
-        src="/src/assets/bil-i-oslo-reklame.gif"
+        src={images["/src/assets/bil-i-oslo-reklame.gif"]()}
         alt="Reklame for Bil i Oslo"
         width="150"
         height="600"
@@ -30,7 +34,7 @@ import { Image } from "astro:assets";
       <slot />
       <Image
         class="bil-i-oslo-reklame"
-        src="/src/assets/bil-i-oslo-reklame.gif"
+        src={images["/src/assets/bil-i-oslo-reklame.gif"]()}
         alt="Reklame for Bil i Oslo"
         width="150"
         height="600"
