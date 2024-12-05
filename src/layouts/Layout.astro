@@ -12,8 +12,15 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 <html lang="no">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content="Digital Utviklings egen nettavis!" />
     <meta name="viewport" content="width=device-width" />
+    <meta property="og:image" content="/src/assets/karvesvingen3.png" />
+    <meta property="og:title" content="Digitaliseringsgevinst'n" />
+    <meta
+      property="og:description"
+      content="Digital Utviklings egen nettavis!"
+    />
+    <meta property="og:url" content="https://digg.bymoslo.no" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Digitaliseringsgevinst'n</title>
