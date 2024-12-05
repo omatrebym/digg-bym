@@ -1,5 +1,9 @@
 ---
+import type { LederFrontmatter } from "@interfaces/frontmatter";
 import Layout from "./Layout.astro";
+import type { MDXLayoutProps } from "astro";
+
+interface Props extends MDXLayoutProps<LederFrontmatter> {}
 
 const {
   frontmatter: { title, author, summary },

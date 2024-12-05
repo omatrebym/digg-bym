@@ -23,7 +23,9 @@ export interface Frontmatter {
 
 export interface ArtikkelFrontmatter extends Frontmatter {}
 
-export interface ReisebrevFrontmatter extends Frontmatter {}
+export interface ReisebrevFrontmatter extends Frontmatter {
+  destination: string;
+}
 
 export interface MatspaltenFrontmatter extends Frontmatter {}
 

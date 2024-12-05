@@ -1,9 +1,11 @@
 ---
+import type { MDXLayoutProps } from "astro";
 import Layout from "./Layout.astro";
+import type { ReisebrevFrontmatter } from "@interfaces/frontmatter";
 
-const {
-  frontmatter: {},
-} = Astro.props;
+interface Props extends MDXLayoutProps<ReisebrevFrontmatter> {}
+
+const {} = Astro.props;
 ---
 
 <Layout>

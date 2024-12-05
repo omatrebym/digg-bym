@@ -7,7 +7,14 @@ import type { ReisebrevFrontmatter } from "@interfaces/frontmatter";
 
 interface Props extends NewsfeedProps, ReisebrevFrontmatter {}
 
-const { draft, title, url, image, elementsPerRow = 1 } = Astro.props;
+const {
+  draft,
+  title,
+  url,
+  image,
+  destination,
+  elementsPerRow = 1,
+} = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/*.{jpeg,jpg,png,gif}"
 );
@@ -23,6 +30,11 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     />
     {draft === true && <span>Draft</span>}
   </div>
+  <span class="newsfeed-post-destination">{destination}:</span>
   <h2 class="newsfeed-post-heading">{title}</h2>
 </a>
-<style define:vars={{ elementsPerRow }}></style>
+<style define:vars={{ elementsPerRow }}>
+  .newsfeed-post-destination {
+    font-size: 1.25rem;
+  }
+</style>

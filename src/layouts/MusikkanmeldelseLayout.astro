@@ -1,5 +1,9 @@
 ---
+import type { MDXLayoutProps } from "astro";
 import Layout from "./Layout.astro";
+import type { MusikkanmeldelseFrontmatter } from "@interfaces/frontmatter";
+
+interface Props extends MDXLayoutProps<MusikkanmeldelseFrontmatter> {}
 
 const {
   frontmatter: { title, author },
