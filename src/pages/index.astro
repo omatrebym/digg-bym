@@ -5,6 +5,7 @@ import {
   type Frontmatter,
   type LederFrontmatter,
   type MatspaltenFrontmatter,
+  type MusikkanmeldelseFrontmatter,
   type ReisebrevFrontmatter,
 } from "@interfaces/frontmatter";
 import Layout from "@layouts/Layout.astro";
@@ -13,6 +14,7 @@ import MatspaltenNewsfeed from "@components/newsfeed/MatspaltenNewsfeed.astro";
 import ReisebrevNewsfeed from "@components/newsfeed/ReisebrevNewsfeed.astro";
 import type { MDXInstance } from "astro";
 import LederNewsfeed from "@components/newsfeed/LederNewsfeed.astro";
+import MusikkanmeldelseNewsfeed from "@components/newsfeed/MusikkanmeldelseNewsfeed.astro";
 
 const posts = await Astro.glob<Frontmatter>("../pages/posts/*.mdx");
 const getUrl = (url?: string) => (url ? url + "/index.html" : undefined);
@@ -91,6 +93,24 @@ const filterArticles = (post: MDXInstance<Frontmatter>) => {
                 image={(post.frontmatter as LederFrontmatter).image}
                 elementsPerRow={
                   (post.frontmatter as LederFrontmatter).elementsPerRow
+                }
+              />
+            )}
+            {post.frontmatter.type === PostType.Musikkanmeldelse && (
+              <MusikkanmeldelseNewsfeed
+                draft={(post.frontmatter as MusikkanmeldelseFrontmatter).draft}
+                title={(post.frontmatter as MusikkanmeldelseFrontmatter).title}
+                summary={
+                  (post.frontmatter as MusikkanmeldelseFrontmatter).summary
+                }
+                author={
+                  (post.frontmatter as MusikkanmeldelseFrontmatter).author
+                }
+                url={getUrl(post.url)}
+                image={(post.frontmatter as MusikkanmeldelseFrontmatter).image}
+                elementsPerRow={
+                  (post.frontmatter as MusikkanmeldelseFrontmatter)
+                    .elementsPerRow
                 }
               />
             )}
