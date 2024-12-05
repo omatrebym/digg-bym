@@ -22,14 +22,11 @@
   width: 100%;
 }
 .newsfeed-post-link {
+  display: block;
   color: inherit;
-  display: inline-block;
-  width: calc(97% / var(--elementsPerRow));
+  grid-column: span calc(12 / var(--elementsPerRow));
   @media (max-width: 1200px) {
-    width: calc(97% / max(var(--elementsPerRow) - 1, 1));
-  }
-  @media (max-width: 800px) {
-    width: 97%;
+    grid-column: span 12;
   }
 }
 .newsfeed-post-link:hover {
