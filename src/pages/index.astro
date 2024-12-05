@@ -1,4 +1,5 @@
 ---
+import type { MDXInstance } from "astro";
 import {
   PostType,
   type ArtikkelFrontmatter,
@@ -12,7 +13,6 @@ import Layout from "@layouts/Layout.astro";
 import ArtikkelNewsfeed from "@components/newsfeed/ArtikkelNewsfeed.astro";
 import MatspaltenNewsfeed from "@components/newsfeed/MatspaltenNewsfeed.astro";
 import ReisebrevNewsfeed from "@components/newsfeed/ReisebrevNewsfeed.astro";
-import type { MDXInstance } from "astro";
 import LederNewsfeed from "@components/newsfeed/LederNewsfeed.astro";
 import MusikkanmeldelseNewsfeed from "@components/newsfeed/MusikkanmeldelseNewsfeed.astro";
 
@@ -29,6 +29,12 @@ const filterArticles = (post: MDXInstance<Frontmatter>) => {
 
   return true;
 };
+const sortArticles = (
+  a: MDXInstance<Frontmatter>,
+  b: MDXInstance<Frontmatter>
+) =>
+  new Date(b.frontmatter.publishedAt).getTime() -
+  new Date(a.frontmatter.publishedAt).getTime();
 ---
 
 <Layout title="Digitaliseringsgevinst'n">
@@ -37,81 +43,37 @@ const filterArticles = (post: MDXInstance<Frontmatter>) => {
     {
       posts
         .filter(filterArticles)
-        .sort(
-          (a, b) =>
-            new Date(b.frontmatter.publishedAt).getTime() -
-            new Date(a.frontmatter.publishedAt).getTime()
-        )
+        .sort(sortArticles)
         .map((post) => (
           <>
             {post.frontmatter.type === PostType.Artikkel && (
               <ArtikkelNewsfeed
-                draft={(post.frontmatter as ArtikkelFrontmatter).draft}
-                title={(post.frontmatter as ArtikkelFrontmatter).title}
-                summary={(post.frontmatter as ArtikkelFrontmatter).summary}
-                author={(post.frontmatter as ArtikkelFrontmatter).author}
+                {...(post.frontmatter as ArtikkelFrontmatter)}
                 url={getUrl(post.url)}
-                image={(post.frontmatter as ArtikkelFrontmatter).image}
-                elementsPerRow={
-                  (post.frontmatter as ArtikkelFrontmatter).elementsPerRow
-                }
               />
             )}
             {post.frontmatter.type === PostType.Matspalten && (
               <MatspaltenNewsfeed
-                draft={(post.frontmatter as MatspaltenFrontmatter).draft}
-                title={(post.frontmatter as MatspaltenFrontmatter).title}
-                summary={(post.frontmatter as MatspaltenFrontmatter).summary}
-                author={(post.frontmatter as MatspaltenFrontmatter).author}
+                {...(post.frontmatter as MatspaltenFrontmatter)}
                 url={getUrl(post.url)}
-                image={(post.frontmatter as MatspaltenFrontmatter).image}
-                elementsPerRow={
-                  (post.frontmatter as MatspaltenFrontmatter).elementsPerRow
-                }
               />
             )}
             {post.frontmatter.type === PostType.Reisebrev && (
               <ReisebrevNewsfeed
-                draft={(post.frontmatter as ReisebrevFrontmatter).draft}
-                title={(post.frontmatter as ReisebrevFrontmatter).title}
-                summary={(post.frontmatter as ReisebrevFrontmatter).summary}
-                author={(post.frontmatter as ReisebrevFrontmatter).author}
+                {...(post.frontmatter as ReisebrevFrontmatter)}
                 url={getUrl(post.url)}
-                image={(post.frontmatter as ReisebrevFrontmatter).image}
-                elementsPerRow={
-                  (post.frontmatter as ReisebrevFrontmatter).elementsPerRow
-                }
               />
             )}
             {post.frontmatter.type === PostType.Leder && (
               <LederNewsfeed
-                draft={(post.frontmatter as LederFrontmatter).draft}
-                title={(post.frontmatter as LederFrontmatter).title}
-                summary={(post.frontmatter as LederFrontmatter).summary}
-                author={(post.frontmatter as LederFrontmatter).author}
+                {...(post.frontmatter as LederFrontmatter)}
                 url={getUrl(post.url)}
-                image={(post.frontmatter as LederFrontmatter).image}
-                elementsPerRow={
-                  (post.frontmatter as LederFrontmatter).elementsPerRow
-                }
               />
             )}
             {post.frontmatter.type === PostType.Musikkanmeldelse && (
               <MusikkanmeldelseNewsfeed
-                draft={(post.frontmatter as MusikkanmeldelseFrontmatter).draft}
-                title={(post.frontmatter as MusikkanmeldelseFrontmatter).title}
-                summary={
-                  (post.frontmatter as MusikkanmeldelseFrontmatter).summary
-                }
-                author={
-                  (post.frontmatter as MusikkanmeldelseFrontmatter).author
-                }
+                {...(post.frontmatter as MusikkanmeldelseFrontmatter)}
                 url={getUrl(post.url)}
-                image={(post.frontmatter as MusikkanmeldelseFrontmatter).image}
-                elementsPerRow={
-                  (post.frontmatter as MusikkanmeldelseFrontmatter)
-                    .elementsPerRow
-                }
               />
             )}
           </>
