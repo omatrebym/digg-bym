@@ -9,6 +9,7 @@ interface Props {
   };
   width?: string;
   captionWidth?: string;
+  float?: "left" | "right";
 }
 
 const {
@@ -17,20 +18,23 @@ const {
   caption,
   width = "100%",
   captionWidth = "100%",
+  float = "none",
 } = Astro.props;
 ---
 
-<figure style={{ width: width }}>
+<figure>
   <img src={src} alt={alt} />
-  <figcaption style={{ color: "#666", width: captionWidth }}>
+  <figcaption>
     {
       `${caption.heading.toUpperCase()}: ${caption.text} Foto: ${caption.photographer}`
     }
   </figcaption>
 </figure>
 
-<style>
+<style define:vars={{ width, captionWidth, float }}>
   figure {
+    float: var(--float);
+    width: var(--width);
     margin: 0;
     padding: 0;
   }
@@ -41,6 +45,8 @@ const {
   }
 
   figcaption {
+    color: #666;
+    width: var(--captionWidth);
     font-size: 0.875rem;
     margin-top: 0.5rem;
   }
