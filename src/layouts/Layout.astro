@@ -1,42 +1,112 @@
 ---
-import SpreGledeKnapp from "../components/SpreGledeKnapp.astro";
+import SpreGledeKnapp from "@components/SpreGledeKnapp.astro";
+import { Image } from "astro:assets";
+import Logo from "@assets/logo.svg?raw";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif}"
+);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="no">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content="Digital Utviklings egen nettavis!" />
     <meta name="viewport" content="width=device-width" />
+    <meta property="og:title" content="Digitaliseringsgevinst'n" />
+    <meta
+      property="og:description"
+      content="Digital Utviklings egen nettavis!"
+    />
+    <meta property="og:image" content="/karvesvingen3.png" />
+    <meta property="og:url" content="https://digg.bymoslo.no" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Digitaliseringsgevinst'n" />
+    <meta property="og:locale" content="nb_NO" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Digitaliseringsgevinst'n" />
+    <meta
+      name="twitter:description"
+      content="Digital Utviklings egen nettavis!"
+    />
+    <meta name="twitter:image" content="/karvesvingen3.png" />
+    <meta name="twitter:url" content="https://digg.bymoslo.no" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Digitaliseringsgevinst'n</title>
   </head>
   <body>
-    <header class="header">
-      <a class="logo visible-non-phone" href="/">Digitaliseringsgevinst'n</a>
-      <a class="logo visible-phone-only" href="/">Digg!</a>
+    <header>
+      <a class="logo-and-app-name-wrapper" href="/">
+        <div class="logo">
+          <Fragment set:html={Logo} />
+        </div>
+        <span class="app-name visible-non-phone">Digitaliseringsgevinst'n</span>
+        <span class="app-name visible-phone-only">Digg!</span>
+      </a>
       <SpreGledeKnapp />
     </header>
     <main>
+      <div class="visible-non-phone">
+        <div class="reklame">
+          <Image
+            src={images["/src/assets/bil-i-oslo-reklame.gif"]()}
+            alt="Reklame for Bil i Oslo"
+            width="150"
+            height="600"
+          />
+          <Image
+            src={images["/src/assets/aws-nikolai.gif"]()}
+            alt="Reklame for Bil i Oslo"
+            width="150"
+            height="150"
+          />
+        </div>
+      </div>
       <slot />
+      <div class="visible-non-phone">
+        <div class="reklame">
+          <Image
+            src={images["/src/assets/bil-i-oslo-reklame.gif"]()}
+            alt="Reklame for Bil i Oslo"
+            width="150"
+            height="600"
+          />
+          <Image
+            src={images["/src/assets/aws-nikolai.gif"]()}
+            alt="Reklame for Bil i Oslo"
+            width="150"
+            height="150"
+          />
+        </div>
+      </div>
     </main>
   </body>
 </html>
 <style is:global>
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  .reklame {
+    position: sticky;
+    right: 0;
+    top: 0;
+    z-index: 1000;
   }
-  .logo {
-    font-size: calc(1rem + 5vw);
-    font-stretch: expanded;
+  .logo-and-app-name-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
     text-decoration: none;
     color: black;
+  }
+  .app-name {
+    font-size: calc(1rem + 2vw);
+    font-stretch: expanded;
+  }
+  .logo {
+    display: flex;
+    width: calc(1rem + 2vw);
+    height: calc(1rem + 2vw);
   }
   .visible-non-phone {
     @media (max-width: 800px) {
@@ -68,6 +138,8 @@ import SpreGledeKnapp from "../components/SpreGledeKnapp.astro";
   }
   main {
     display: flex;
+    flex-direction: row;
+    gap: 1rem;
     margin: 0 auto;
     max-width: 1200px;
     @media (max-width: 1600px) {
@@ -78,9 +150,12 @@ import SpreGledeKnapp from "../components/SpreGledeKnapp.astro";
     padding: 1rem 1rem 10rem 1rem;
   }
   header {
-    background-color: white;
-    padding: 1rem;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   html {
     height: 100%;

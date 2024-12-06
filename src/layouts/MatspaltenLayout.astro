@@ -1,5 +1,9 @@
 ---
+import type { MDXLayoutProps } from "astro";
 import Layout from "./Layout.astro";
+import type { MusikkanmeldelseFrontmatter } from "@interfaces/frontmatter";
+
+interface Props extends MDXLayoutProps<MusikkanmeldelseFrontmatter> {}
 
 const {
   frontmatter: { title, author },
@@ -9,7 +13,7 @@ const {
 <Layout>
   <article>
     <h1>{title}</h1>
-    <h2>{`Av ${author}`}</h2>
+    <span class="authored-by">{`Av ${author}`}</span>
     <slot />
   </article>
 </Layout>
@@ -19,31 +23,13 @@ const {
     margin: 0;
   }
 
-  header {
-    margin-bottom: 1rem;
-  }
-
   h1 {
     margin: 0;
     font-size: 4rem;
   }
 
-  time {
-    color: #666;
-    font-size: 0.875rem;
-  }
-
-  section {
-    line-height: 1.6;
-  }
-
   .authored-by {
     font-size: 1.25rem;
     color: #666;
-  }
-
-  .ingress {
-    font-size: 2rem;
-    margin-top: 1rem;
   }
 </style>

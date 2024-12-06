@@ -1,0 +1,55 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  caption: {
+    heading: string;
+    text: string;
+    photographer: string;
+  };
+  width?: string;
+  captionWidth?: string;
+  float?: "left" | "right";
+  padding?: string;
+}
+
+const {
+  src,
+  alt,
+  caption,
+  width = "100%",
+  captionWidth = "100%",
+  float = "none",
+  padding = "0",
+} = Astro.props;
+---
+
+<figure>
+  <img src={src} alt={alt} />
+  <figcaption>
+    {
+      `${caption.heading.toUpperCase()}: ${caption.text} Foto: ${caption.photographer}`
+    }
+  </figcaption>
+</figure>
+
+<style define:vars={{ width, captionWidth, float, padding }}>
+  figure {
+    float: var(--float);
+    width: var(--width);
+    margin: 0;
+    padding: var(--padding);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    color: #666;
+    width: var(--captionWidth);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+</style>

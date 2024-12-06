@@ -2,6 +2,8 @@ export enum PostType {
   Artikkel = 1,
   Reisebrev = 2,
   Matspalten = 3,
+  Leder = 4,
+  Musikkanmeldelse = 5,
 }
 
 export interface Frontmatter {
@@ -14,12 +16,21 @@ export interface Frontmatter {
   image: {
     url: string;
     alt: string;
+    height?: string;
   };
   elementsPerRow?: number;
 }
 
-export interface ArtikkelFrontmatter extends Frontmatter {}
+export interface ArtikkelFrontmatter extends Frontmatter {
+  severity: "low" | "medium" | "high";
+}
 
-export interface ReisebrevFrontmatter extends Frontmatter {}
+export interface ReisebrevFrontmatter extends Frontmatter {
+  destination: string;
+}
 
 export interface MatspaltenFrontmatter extends Frontmatter {}
+
+export interface LederFrontmatter extends Frontmatter {}
+
+export interface MusikkanmeldelseFrontmatter extends Frontmatter {}

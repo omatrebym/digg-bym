@@ -1,5 +1,9 @@
 ---
+import type { MDXLayoutProps } from "astro";
 import Layout from "./Layout.astro";
+import type { ArtikkelFrontmatter } from "@interfaces/frontmatter";
+
+interface Props extends MDXLayoutProps<ArtikkelFrontmatter> {}
 
 const {
   frontmatter: { title, author, summary },
@@ -20,22 +24,9 @@ const {
     margin: 0;
   }
 
-  header {
-    margin-bottom: 1rem;
-  }
-
   h1 {
     margin: 0;
     font-size: 4rem;
-  }
-
-  time {
-    color: #666;
-    font-size: 0.875rem;
-  }
-
-  section {
-    line-height: 1.6;
   }
 
   .authored-by {
